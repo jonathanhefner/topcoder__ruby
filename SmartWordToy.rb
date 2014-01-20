@@ -1,37 +1,41 @@
 # PROBLEM:
-#   There is a word toy that displays four letters at all times. Below each 
-#   letter are two buttons that cause the letter to change to the previous 
+#   There is a word toy that displays 4 letters at all times. There are 2 
+#   buttons for each letter that cause the letter to change to the previous 
 #   or next letter in alphabetical order. So, with one click of a button the 
 #   letter 'c' can be changed to a 'b' or a 'd'. The alphabet is circular, 
 #   so for example an 'a' can become a 'z' or a 'b' with one click. 
-#
-#   You would like to know if a word can be reached from some starting word, 
-#   given one or more constraints. A constraint defines a set of forbidden 
-#   words that can never be displayed by the toy. Each constraint is 
-#   formatted like "X X X X", where each X is a string of lowercase letters. 
-#   A word is specified by a constraint if the ith letter of the word is 
-#   contained in the ith X of the contraint. For example, the constraint 
-#   "lf a tc e" specifies the words "late", "fate", "lace" and "face". 
-#
+#   
+#   You are to determine if, using these mechanics, a starting word can 
+#   transformed into a goal word. However, there are forbidden words that 
+#   can never be displayed by the toy. These forbidden words are determined 
+#   by one or more constraint strings, each in the form of "X X X X" where 
+#   each X is a sequence of lowercase letters. A word is forbidden if the 
+#   ith letter of the word is contained in the ith X of a contraint string. 
+#   For example, the constraint "lf a tc e" forbids the words "late", 
+#   "fate", "lace" and "face". 
+#   
 #   You will be given a string `start`, a string `finish`, and a string[] 
-#   `forbid`. Return the minimum number of button presses required for the 
-#   toy to show the word `finish` if the toy was originally showing the word 
-#   `start`. Remember, the toy must never show a forbidden word. If it is 
-#   impossible for the toy to ever show the desired word, return -1. 
-#
+#   `forbid`. Return the minimum number of button presses required to 
+#   display `finish` if the toy was originally displaying `start`. Remember, 
+#   the toy must never show a forbidden word. If it is impossible for the 
+#   toy to ever show `finish`, return -1. 
+# 
 # CONSTRAINTS:
-#   - `start` and `finish` will contain exactly four characters.
-#   - `start` and `finish` will contain only lowercase letters.
-#   - `forbid` will contain between 0 and 50 elements, inclusive.
-#   - Each element of `forbid` will contain between 1 and 50 characters.
-#   - Each element of `forbid` will contain lowercase letters and exactly three
-#     spaces.
-#   - Each element of `forbid` will not contain leading, trailing or double
-#     spaces.
-#   - Each letter within a group of letters in each element of forbid will be
-#     distinct.  Thus "aa a a a" is not allowed.
-#   - `start` will not be a forbidden word.
-#
+#   - `start`:
+#     - will not be a forbidden word
+#   - `start` and `finish`:
+#     - will contain exactly 4 characters
+#     - will contain only lowercase letters
+#   - `forbid`:
+#     - will contain between 0 and 50 elements (inclusive)
+#   - each element of `forbid`:
+#     - will contain between 1 and 50 characters (inclusive)
+#     - will have exactly three spaces
+#     - will not contain leading, trailing or double spaces
+#     - will contain only lowercase letters
+#   - each letter within a group of letters in each element of `forbid`:
+#     - will be distinct (thus "aa a a a" is not allowed)
+# 
 # Original at http://community.topcoder.com/stat?c=problem_statement&pm=3935&rd=6532
 
 DISPLAYS = (0...4).to_a
