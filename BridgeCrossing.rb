@@ -20,6 +20,7 @@
 #     - will be between 1 and 100 (inclusive)
 #
 # Original at http://community.topcoder.com/stat?c=problem_statement&pm=1599&rd=4535
+# Also see https://en.wikipedia.org/wiki/Bridge_and_torch_problem
 
 
 def min_time(times)
@@ -103,7 +104,7 @@ def brute_min_time_rec(times, crossed, total_time)
   # on the starting side. Thus, if there are 2 or less people who haven't 
   # crossed, just send them across (at the slowest pace amongst them), and we 
   # are done.
-  if crossed.count(false) <= 2 # a running total would be more efficient
+  if crossed.count(false) <= 2 # a running total would be much more efficient
     total_time + times.each_with_index.map{|t, i| crossed[i] ? 0 : t }.max
     
   # Otherwise try all combinations of 2 crossers + 1 flashlight carrier, and 
@@ -111,7 +112,7 @@ def brute_min_time_rec(times, crossed, total_time)
   # [i,j] == [j,i]), so we start the inner loop at i + 1 to save computations.
   else
     min = INT_MAX
-  
+    
     for i in 0...times.length
       next if crossed[i]
       for j in (i + 1)...times.length
@@ -151,34 +152,29 @@ def brute_min_time_rec(times, crossed, total_time)
   # costs would look something like: 
   # 
   #   (5 * 4) * (4 * 3) * (3 * 2) 
-  #     == (5 * 4 * 3 * 2)/2 * (4 * 3 * 2)
+  #     == (5 * 4 * 3) * (4 * 3 * 2)
   #     == 5!/2 * 4!
-  #     == (5! * 4!) / 2
+  #     == 5! * 4! / 2
   # 
-  # So I put in a step counter to check the numbers, but I found that the steps 
-  # taken were much fewer than this first estimation (i.e. it was not a very 
+  # So I put in a counter to check the numbers, but I found that the solutions 
+  # tried were much fewer than this first estimation (i.e. it was not a very 
   # tight upper bound at all). So I scribbled down a branching tree and, after 
   # a bit of confusion, found that it was my own optimization of choosing j > i 
-  # that was causing the discrepancy.  By choosing j > i the costs for n=5 
-  # would be more like:
+  # that was causing the discrepancy. For each recursion where there were k 
+  # people remaining to cross, there are only ((k - 1) + (k - 2) + (k - 3) + 
+  # (k - 4) + ... + 1) == ((k-1) * (k-1 + 1)/2) total sub-solutions tried. 
+  # For n=5, this would look something like:
   # 
-  #   (5 * 4/2) * (4 * 3/2) * (3 * 2/2) 
-  #     == (5 * 4 * 3 * 2)/2 * (4 * 3 * 2)/(2 * 2 * 2)
-  #     == 5!/2 * 4!/(2 ^ 3)
-  #     == (5! * 4!)/(2 ^ 4)
+  #   (4 * (4 + 1)/2) * (3 * (3 + 1)/2) * (2 * (2 + 1)/2)
+  #     == (4 * 3 * 2) * (5 * 4 * 3) / (2 * 2 * 2)
+  #     == 4! * 5!/2 / 2^3
+  #     == 5! * 4! / 2^4
   # 
-  # But that is still an over-estimation because we're dealing with discrete 
-  # choices, so the actual formula is more like:
-  # 
-  #   (5 * floor(4/2)) * (4 * floor(3/2)) * (3 * floor(2/2))
-  #     == (5 * 4 * 3 * 2) * (2 * 1 * 1)
-  #     == 5! * ???
-  # 
-  # I got a bit curious if there was a formula for such a series, so I typed 
-  # the sequence "1 1 2 2 3 3 4 4 5 5 6 6" into Wolfram Alpha. It suggested a 
-  # function for the k-th term in the series ((1 - -1^k + 2k)/4), but nothing 
-  # that could be expressed in terms of n. So for the moment, I've settled for 
-  # (n! * (n - 1)! / 2^(n - 1)) as a loose upper bound, one which unfortunately 
-  # gets looser as n gets bigger. In any case, it's a far cry from the 
-  # (n*log2(n) + n) complexity that the math-based algorithm offers.
+  # Still, (n! * (n - 1)! / 2^(n - 1)) complexity is a far cry from the 
+  # (n * log2(n) + n) complexity offered by the math-based algorithm. And 
+  # though it's easy to plug in values for n and see the difference, a concrete 
+  # example conveys it so much better: using a measly value of n=9, the brute 
+  # force algorithm took 16m42s to complete. That's roughly 1000 seconds. In 
+  # comparison, to have the math-based algorithm take even 1 second to complete, 
+  # I had to increase n to 1,000,000.
 end
