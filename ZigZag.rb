@@ -1,3 +1,6 @@
+# TAGS:
+#   dynamic programming
+#
 # PROBLEM:
 #   A zig-zag sequence is a sequence of numbers where the differences 
 #   between successive numbers strictly alternate between positive and 

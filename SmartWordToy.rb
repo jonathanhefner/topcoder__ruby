@@ -1,3 +1,6 @@
+# TAGS:
+#   graph, trie, complexity analysis
+#
 # PROBLEM:
 #   There is a word toy that displays 4 letters at all times. There are 2 
 #   buttons for each letter that cause the letter to change to the previous 
@@ -19,7 +22,7 @@
 #   display `finish` if the toy was originally displaying `start`. Remember, 
 #   the toy must never show a forbidden word. If it is impossible for the 
 #   toy to ever show `finish`, return -1. 
-# 
+#
 # CONSTRAINTS:
 #   - `start`:
 #     - will not be a forbidden word
@@ -35,7 +38,7 @@
 #     - will contain only lowercase letters
 #   - each letter within a group of letters in each element of `forbid`:
 #     - will be distinct (thus "aa a a a" is not allowed)
-# 
+#
 # Original at http://community.topcoder.com/stat?c=problem_statement&pm=3935&rd=6532
 
 DISPLAYS = (0...4).to_a

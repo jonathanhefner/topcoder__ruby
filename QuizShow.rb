@@ -1,3 +1,6 @@
+# TAGS:
+#   unique algorithm, probability
+#
 # PROBLEM:
 #   You are on a TV quiz show. You and your 2 opponents have each 
 #   accumulated points, and now, at the end of the game, you are all given 
@@ -7,7 +10,7 @@
 #   contestant who answers incorrectly will lose points equal to his wager. 
 #   The contestant who has the most points after the final question wins the 
 #   game. 
-# 
+#   
 #   You must select your wager. You can choose any amount between zero and 
 #   your current score, inclusive. Given your current score, your opponents' 
 #   scores, and how much you think each opponent will wager, compute how 
@@ -15,7 +18,7 @@
 #   game uncontested (i.e. not ending in a tie). Assume you and your 
 #   opponents each independently have a 50% chance of answering the final 
 #   question correctly. 
-# 
+#   
 #   You will be given an int[] `scores` containing your score followed by 
 #   your 2 opponents' scores (in order). You will also be given an int 
 #   `wager1`, the amount of the first opponent's wager, and an int `wager2`, 

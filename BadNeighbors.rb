@@ -1,3 +1,6 @@
+# TAGS:
+#   dynamic programming
+#
 # PROBLEM:
 #   There is a small town with a well. Each resident in the town hates his 
 #   next-door neighbors. Nobody in the town is willing to live farther away 

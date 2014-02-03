@@ -1,3 +1,6 @@
+# TAGS:
+#   unique algorithm
+#
 # PROBLEM:
 #   You are planting a row of flowers of varying heights. You want the 
 #   taller flowers towards the front of the row, but you can't have them 

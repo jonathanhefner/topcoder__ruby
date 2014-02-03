@@ -1,3 +1,6 @@
+# TAGS:
+#   unique algorithm, complexity analysis
+#
 # PROBLEM:
 #   A number of people are crossing an old bridge. The bridge cannot hold 
 #   more than two people at once. It is dark, so they can't walk without a 
@@ -12,7 +15,7 @@
 #   time each person needs to cross the bridge. Your program should return 
 #   the minimum possible amount of time spent getting everyone to the other 
 #   side of the bridge. 
-# 
+#
 # CONSTRAINTS:
 #   - `times`:
 #     - will have between 1 and 6 elements (inclusive)
