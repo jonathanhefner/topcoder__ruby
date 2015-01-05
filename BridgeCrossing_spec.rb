@@ -1,4 +1,5 @@
-require './BridgeCrossing.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'BridgeCrossing'
 require 'rspec'
 
 

@@ -1,4 +1,5 @@
-require './ZigZag.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'ZigZag'
 require 'rspec'
 
 

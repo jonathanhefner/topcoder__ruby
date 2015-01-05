@@ -1,4 +1,5 @@
-require './SmartWordToy.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'SmartWordToy'
 require 'rspec'
 
 

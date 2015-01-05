@@ -1,4 +1,5 @@
-require './BadNeighbors.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'BadNeighbors'
 require 'rspec'
 
 

@@ -1,4 +1,5 @@
-require './QuizShow.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'QuizShow'
 require 'rspec'
 
 

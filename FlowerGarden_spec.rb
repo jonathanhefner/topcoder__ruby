@@ -1,4 +1,5 @@
-require './FlowerGarden.rb'
+$:<< File.dirname(__FILE__) << "#{File.dirname(__FILE__)}/.."
+require 'FlowerGarden'
 require 'rspec'
 
 
