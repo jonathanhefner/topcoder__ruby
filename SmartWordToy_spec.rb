@@ -1,18 +1,19 @@
 require './SmartWordToy.rb'
 require 'rspec'
 
-class Inputs < Struct.new(:start, :finish, :forbid); end
 
 describe 'min_presses' do
-  { Inputs.new('aaaa', 'zzzz', ['a a a z', 'a a z a', 'a z a a', 'z a a a', 
+  data = Struct.new(:start, :finish, :forbid)
+
+  { data.new('aaaa', 'zzzz', ['a a a z', 'a a z a', 'a z a a', 'z a a a', 
                                 'a z z z', 'z a z z', 'z z a z', 'z z z a']) => 8,
-    Inputs.new('aaaa', 'bbbb', []) => 4,
-    Inputs.new('aaaa', 'mmnn', []) => 50,
-    Inputs.new('aaaa', 'zzzz', ['bz a a a', 'a bz a a', 'a a bz a', 'a a a bz']) => -1,
-    Inputs.new('aaaa', 'zzzz', ['cdefghijklmnopqrstuvwxyz a a a', 'a cdefghijklmnopqrstuvwxyz a a', 
+    data.new('aaaa', 'bbbb', []) => 4,
+    data.new('aaaa', 'mmnn', []) => 50,
+    data.new('aaaa', 'zzzz', ['bz a a a', 'a bz a a', 'a a bz a', 'a a a bz']) => -1,
+    data.new('aaaa', 'zzzz', ['cdefghijklmnopqrstuvwxyz a a a', 'a cdefghijklmnopqrstuvwxyz a a', 
                                 'a a cdefghijklmnopqrstuvwxyz a', 'a a a cdefghijklmnopqrstuvwxyz']) => 6,
-    Inputs.new('aaaa', 'bbbb', ['b b b b']) => -1,
-    Inputs.new('zzzz', 'aaaa', ['abcdefghijkl abcdefghijkl abcdefghijkl abcdefghijk'] * 50) => -1,
+    data.new('aaaa', 'bbbb', ['b b b b']) => -1,
+    data.new('zzzz', 'aaaa', ['abcdefghijkl abcdefghijkl abcdefghijkl abcdefghijk'] * 50) => -1,
   }.each do |input, expected|
   
     it "returns #{expected} for #{input.start} -> #{input.finish} (#{input.forbid.length} forbidden)" do
