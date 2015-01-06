@@ -17,7 +17,7 @@ describe 'brute_min_time' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input}" do
-      brute_min_time(input).should == expected
+      expect(brute_min_time(input)).to eq(expected)
     end
   
   end
@@ -39,7 +39,7 @@ describe 'min_time' do
   ].each do |input|
   
     it "returns the same as brute_min_time for #{input}" do
-      min_time(input).should == brute_min_time(input)
+      expect(min_time(input)).to eq(brute_min_time(input))
     end
   
   end

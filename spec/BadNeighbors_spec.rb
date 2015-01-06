@@ -18,7 +18,7 @@ describe 'max_donations' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input}" do
-      max_donations(input).should == expected
+      expect(max_donations(input)).to eq(expected)
     end
   
   end

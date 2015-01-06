@@ -15,7 +15,7 @@ describe 'get_ordering' do
   }.each do |input, expected|
   
     it "returns #{expected} for heights #{input.height}, bloom days #{input.bloom}, and wilt days #{input.wilt}" do
-      get_ordering(input.height, input.bloom, input.wilt).should == expected
+      expect(get_ordering(input.height, input.bloom, input.wilt)).to eq(expected)
     end
   
   end

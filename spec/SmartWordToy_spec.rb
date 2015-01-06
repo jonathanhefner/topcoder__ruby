@@ -18,7 +18,7 @@ describe 'min_presses' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input.start} -> #{input.finish} (#{input.forbid.length} forbidden)" do
-      min_presses(input.start, input.finish, input.forbid).should == expected
+      expect(min_presses(input.start, input.finish, input.forbid)).to eq(expected)
     end
   
   end
@@ -35,7 +35,7 @@ describe 'to_id' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input}" do
-      to_id(input).should == expected
+      expect(to_id(input)).to eq(expected)
     end
   
   end
@@ -51,7 +51,7 @@ describe 'preprocess_constraints' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input}" do
-      preprocess_constraints(input).should == expected
+      expect(preprocess_constraints(input)).to eq(expected)
     end
   
   end
@@ -72,7 +72,7 @@ describe 'neighbor' do
         n += [1, -1].map{|i| neighbor(input_id, d, i) }
       end
       
-      actual_ids.should =~ expected_ids
+      expect(actual_ids).to match_array(expected_ids)
     end
   
   end
@@ -93,7 +93,7 @@ describe 'check_forbidden' do
       id = to_id(input.first)
       constraints = preprocess_constraints([input.last])
       
-      check_forbidden(id, constraints).should == expected
+      expect(check_forbidden(id, constraints)).to eq(expected)
     end
   
   end

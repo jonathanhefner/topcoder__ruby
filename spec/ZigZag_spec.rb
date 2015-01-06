@@ -15,7 +15,7 @@ describe 'longest_zig_zag' do
   }.each do |input, expected|
   
     it "returns #{expected} for #{input}" do
-      longest_zig_zag(input).should == expected
+      expect(longest_zig_zag(input)).to eq(expected)
     end
   
   end

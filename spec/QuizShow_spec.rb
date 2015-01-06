@@ -20,7 +20,7 @@ describe 'wager' do
   }.each do |input, expected|
   
     it "returns #{expected} for scores #{input.scores} and opponent wagers #{input.wagers}" do
-      wager(input.scores, *input.wagers).should == expected
+      expect(wager(input.scores, *input.wagers)).to eq(expected)
     end
   
   end
