@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'BadNeighbors'
+require 'bad_neighbors'
 
 
 class BadNeighborsTest < Minitest::Test

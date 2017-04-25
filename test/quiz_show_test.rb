@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'QuizShow'
+require 'quiz_show'
 
 
 class QuizShowTest < Minitest::Test

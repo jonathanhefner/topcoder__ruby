@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'ZigZag'
+require 'zig_zag'
 
 
 class ZigZagTest < Minitest::Test

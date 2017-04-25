@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'BridgeCrossing'
+require 'bridge_crossing'
 
 
 class BridgeCrossingTest < Minitest::Test

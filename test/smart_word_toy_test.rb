@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'SmartWordToy'
+require 'smart_word_toy'
 
 
 class SmartWordToyTest < Minitest::Test

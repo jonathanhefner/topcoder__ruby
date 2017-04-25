@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'FlowerGarden'
+require 'flower_garden'
 
 
 class FlowerGardenTest < Minitest::Test
