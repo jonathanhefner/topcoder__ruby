@@ -45,7 +45,7 @@ class FlowerGardenTest < Minitest::Test
 
   def test_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, get_ordering(input.height, input.bloom, input.wilt)
+      assert_equal expected, FlowerGarden.solve(input.height, input.bloom, input.wilt)
     end
   end
 
