@@ -21,7 +21,7 @@ class QuizShowTest < Minitest::Test
 
   def test_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, wager(input.scores, *input.wagers)
+      assert_equal expected, QuizShow.solve(input.scores, *input.wagers)
     end
   end
 
