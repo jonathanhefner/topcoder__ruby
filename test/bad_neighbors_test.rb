@@ -20,7 +20,7 @@ class BadNeighborsTest < Minitest::Test
 
   def test_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, max_donations(input)
+      assert_equal expected, BadNeighbors.solve(input)
     end
   end
 
