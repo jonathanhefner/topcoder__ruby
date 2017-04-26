@@ -18,13 +18,13 @@ class BridgeCrossingTest < Minitest::Test
 
   def test_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, min_time(input)
+      assert_equal expected, BridgeCrossing.solve(input)
     end
   end
 
   def test_brute_force_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, brute_min_time(input)
+      assert_equal expected, BridgeCrossing.brute_solve(input)
     end
   end
 
