@@ -17,7 +17,7 @@ class ZigZagTest < Minitest::Test
 
   def test_solution
     SOLUTIONS.each do |input, expected|
-      assert_equal expected, longest_zig_zag(input)
+      assert_equal expected, ZigZag.solve(input)
     end
   end
 
