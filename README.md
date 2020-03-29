@@ -1,4 +1,4 @@
-# TopCoder (Ruby)
+# TopCoder Solutions in Ruby
 
 Solutions to various [TopCoder problems][1], implemented in Ruby.
 
